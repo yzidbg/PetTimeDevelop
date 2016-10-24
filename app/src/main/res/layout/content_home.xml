@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fitsSystemWindows="true"
+    android:background="#ffffff">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="56dp"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
+        android:weightSum="1">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="72dp"
+            android:id="@+id/imageView"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/logo_pet"
+            android:layout_marginTop="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bienvenid_a_pettimeapp"
+            android:id="@+id/txtTitulo"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            style="@android:style/TextAppearance.Large"
+            android:visibility="visible"
+            android:elegantTextHeight="false"
+            android:textColor="@color/abc_secondary_text_material_light"
+            android:layout_gravity="center_horizontal"
+            android:textStyle="bold" />
+
+        <TextView
+            style="@android:style/TextAppearance.Large"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mas_cuidado"
+            android:id="@+id/txtSubTitulo"
+            android:layout_centerHorizontal="true"
+            android:visibility="visible"
+            android:elegantTextHeight="false"
+            android:textColor="@color/abc_secondary_text_material_light"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="80dp"
+            android:textSize="18dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="220dp"
+            android:id="@+id/imageView2"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/img1"
+            android:contentDescription="@string/imagen_entrada" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal">
+
+            <Button
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:text="@string/iniciar_sesi_n"
+                android:id="@+id/btnLogin" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnRegistro"
+                android:text="@string/crear_cuenta" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+</ScrollView>
