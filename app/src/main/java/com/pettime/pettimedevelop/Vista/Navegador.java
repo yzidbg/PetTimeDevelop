@@ -26,6 +26,7 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.pettime.pettimedevelop.Datos.DataEst;
 import com.pettime.pettimedevelop.Fragmentos.FragmentoInicial;
+import com.pettime.pettimedevelop.Fragmentos.FragmentoVacio;
 import com.pettime.pettimedevelop.Modelo.Establecimiento;
 import com.pettime.pettimedevelop.Modelo.Usuario;
 import com.pettime.pettimedevelop.R;
@@ -70,15 +71,16 @@ public class Navegador extends AppCompatActivity
 
         FragmentManager fm = getFragmentManager();
 
-        FragmentoInicial hf = new FragmentoInicial();
-        Bundle b = new Bundle();
+        //FragmentoInicial hf = new FragmentoInicial();
+        /*Bundle b = new Bundle();
         b.putString("1",usr.getNombre());
         b.putString("2",usr.getEmail());
-        hf.setArguments(b);
+        hf.setArguments(b);*/
 
-        fm.beginTransaction().replace(R.id.content_frame_nav, hf).commit();
+        fm.beginTransaction().replace(R.id.content_frame_nav, new FragmentoVacio()).commit();
 
         sMapFragment.getMapAsync(this);
+
         View header = LayoutInflater.from(this).inflate(R.layout.nav_header_navegador, null);
         navigationView.addHeaderView(header);
 

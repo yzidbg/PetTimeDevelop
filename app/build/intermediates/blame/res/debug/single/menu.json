@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "C:\\Users\\yz\\Downloads\\PetTimeDevelop\\PetTimeDevelop\\app\\build\\intermediates\\res\\merged\\debug\\menu\\navegador.xml",
+        "source": "C:\\Users\\yz\\Downloads\\PetTimeDevelop\\PetTimeDevelop\\app\\src\\main\\res\\menu\\navegador.xml"
+    },
+    {
+        "merged": "C:\\Users\\yz\\Downloads\\PetTimeDevelop\\PetTimeDevelop\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_home.xml",
+        "source": "C:\\Users\\yz\\Downloads\\PetTimeDevelop\\PetTimeDevelop\\app\\src\\main\\res\\menu\\menu_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\yz\\Downloads\\PetTimeDevelop\\PetTimeDevelop\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_principal.xml",
+        "source": "C:\\Users\\yz\\Downloads\\PetTimeDevelop\\PetTimeDevelop\\app\\src\\main\\res\\menu\\menu_principal.xml"
+    },
+    {
+        "merged": "C:\\Users\\yz\\Downloads\\PetTimeDevelop\\PetTimeDevelop\\app\\build\\intermediates\\res\\merged\\debug\\menu\\activity_navegador_drawer.xml",
+        "source": "C:\\Users\\yz\\Downloads\\PetTimeDevelop\\PetTimeDevelop\\app\\src\\main\\res\\menu\\activity_navegador_drawer.xml"
+    }
+]

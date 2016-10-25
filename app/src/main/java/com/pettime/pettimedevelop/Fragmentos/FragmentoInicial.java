@@ -12,7 +12,7 @@ import com.pettime.pettimedevelop.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class FragmentoInicial extends Fragment {
+public class  FragmentoInicial extends Fragment {
 
 
     public FragmentoInicial() {

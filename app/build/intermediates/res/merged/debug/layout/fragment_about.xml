@@ -1,0 +1,31 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.pettime.pettimedevelop.Fragmentos.AboutFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="252dp"
+        android:layout_gravity="center_horizontal|bottom">
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="239dp"
+        android:layout_gravity="center_horizontal|top">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="App Desarrollada por:"
+            android:id="@+id/txtTituloAbout"
+            android:textColor="@color/accent_material_light"
+            android:textSize="@dimen/abc_text_size_medium_material"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+</FrameLayout>

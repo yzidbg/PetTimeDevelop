@@ -95,7 +95,7 @@ public class LoginActivity extends AppCompatActivity {
                 //Intent intent = new Intent(getApplicationContext(), MenuLateralActivity.class);
                 intent.putExtra("User",usr);
                 startActivity(intent);
-                onLoginSuccess();
+                //onLoginSuccess();
             }else {
                 onLoginFailed("Contraseña incorrecta");
                 _passwordText.setText(null);
