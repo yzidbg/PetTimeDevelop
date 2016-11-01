@@ -11,13 +11,8 @@ import android.widget.Button;
 import android.widget.Toast;
 
 
-import com.pettime.pettimedevelop.Datos.DataUsr;
-import com.pettime.pettimedevelop.Modelo.Usuario;
 import com.pettime.pettimedevelop.Vista.LoginActivity;
-import com.pettime.pettimedevelop.Vista.MapaPrincipal;
 import com.pettime.pettimedevelop.Vista.RegisterActivity;
-
-import java.util.ArrayList;
 
 public class Home extends AppCompatActivity {
 

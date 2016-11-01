@@ -13,13 +13,13 @@
     android:weightSum="1">
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="84dp"
-        android:layout_height="wrap_content"
+        android:id="@+id/avatarPeq"
+        android:layout_width="wrap_content"
+        android:layout_height="140dp"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:src="@android:drawable/sym_def_app_icon"
+        android:src="@drawable/def_avatar"
         android:layout_gravity="center_horizontal"
-        android:layout_weight="0.89" />
+        android:layout_marginTop="10dp" />
 
 
     <TextView

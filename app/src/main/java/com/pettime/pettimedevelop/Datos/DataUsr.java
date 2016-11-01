@@ -14,7 +14,7 @@ public class DataUsr {
         cargaUsuarios();
     }
     private void cargaUsuarios(){
-        usuarios.add(new Usuario(1000,1,1,2,"Calle con carrera","mail@mail.com",14327391,"Yesid Bermúdez","123456","123456","123456"));
+        usuarios.add(new Usuario(1000,1,1,2,"Calle con carrera","mail@mail.com",14327391,"Yesid Bermúdez","123456","123456","123456",null));
     }
 
     public void setUsuarios(ArrayList<Usuario> usuarios) {

@@ -92,10 +92,9 @@ public class RegisterActivity extends AppCompatActivity {
             progressDialog.setCancelable(true);
             progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
             progressDialog.show();
-            Usuario usr = new Usuario(1000,1,1,2,"",email,0,name,password,"123456","123456");
+            Usuario usr = new Usuario(1000,1,1,2,"",email,0,name,password,"123456","123456",null);
             Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
             intent.putExtra("Usr",usr);
-            //Intent intent = new Intent(getApplicationContext(), MenuLateralActivity.class);
             startActivity(intent);
         }else{
             onSignupFailed("Ya existe un usuario con esos datos");

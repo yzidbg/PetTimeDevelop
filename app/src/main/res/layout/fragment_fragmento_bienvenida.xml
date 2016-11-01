@@ -2,10 +2,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.pettime.pettimedevelop.Fragmentos.FragmentoInicial">
+    tools:context=".Fragmentos.FragmentoBienvenida">
 
     <!-- TODO: Update blank fragment layout -->
-
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -15,11 +14,20 @@
         android:paddingRight="24dp"
         android:weightSum="1">
 
-        <TextView
+        <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/avatarBig"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="5dp"
+        android:src="@drawable/def_avatar"
+        android:layout_marginTop="0dp" />
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/bienvenid_a_pettimeapp"
-        android:id="@+id/txtTitulo"
+        android:id="@+id/txtTituloBv"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         style="@android:style/TextAppearance.Large"
@@ -27,14 +35,15 @@
         android:elegantTextHeight="false"
         android:textColor="@color/abc_secondary_text_material_light"
         android:layout_gravity="center_horizontal"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textSize="18dp" />
 
     <TextView
         style="@android:style/TextAppearance.Large"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/mas_cuidado"
-        android:id="@+id/txtSubTitulo"
+        android:id="@+id/txtSubTituloBv"
         android:layout_centerHorizontal="true"
         android:visibility="visible"
         android:elegantTextHeight="false"
@@ -44,4 +53,5 @@
         android:textSize="18dp" />
 
     </LinearLayout>
+
 </FrameLayout>

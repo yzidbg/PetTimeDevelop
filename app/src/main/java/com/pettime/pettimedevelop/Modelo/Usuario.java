@@ -19,11 +19,14 @@ public class Usuario implements Serializable{
     private String tel2;
     private int codTipoPerfil;
     private int codEstadoCuenta;
+    private String imagenPerfil;
 
     public Usuario() {
     }
 
-    public Usuario(int codCuidad, int codEstadoCuenta, int codTipoId, int codTipoPerfil, String dir, String email, int idUsaurio, String nombre, String password, String tel1, String tel2) {
+    public Usuario(int codCuidad, int codEstadoCuenta, int codTipoId, int codTipoPerfil, String dir,
+                   String email, int idUsaurio, String nombre, String password, String tel1,
+                   String tel2, String imagenPerfil) {
         this.codCuidad = codCuidad;
         this.codEstadoCuenta = codEstadoCuenta;
         this.codTipoId = codTipoId;
@@ -35,7 +38,12 @@ public class Usuario implements Serializable{
         this.password = password;
         this.tel1 = tel1;
         this.tel2 = tel2;
+        this.imagenPerfil = imagenPerfil;
     }
+
+    public String getImagenPerfil() {return imagenPerfil;}
+
+    public void setImagenPerfil(String imagenPerfil) {this.imagenPerfil = imagenPerfil;}
 
     public int getCodCuidad() {
         return codCuidad;

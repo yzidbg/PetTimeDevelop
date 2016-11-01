@@ -32,10 +32,24 @@ android:fitsSystemWindows="true">
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textCapWords"
-            android:hint="Nombre Mascota" />
+            android:hint="Nombre de tu Mascota" />
     </android.support.design.widget.TextInputLayout>
 
     <!--  Edad Label -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Especie"
+        android:id="@+id/textView3"
+        android:layout_marginLeft="4dp" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinnerEspecies"
+        android:entries="@array/Especies" />
+
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

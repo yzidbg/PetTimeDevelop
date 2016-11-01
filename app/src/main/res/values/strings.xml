@@ -28,4 +28,9 @@
     <string name="title_activity_navegador_principal">Menú Principal</string>
     <string name="title_activity_navegador">Navegador</string>
 
+    <!-- Conjunto de Strings para el View Spinner -->
+    <string-array name="Especies">
+        <item>Canino</item>
+    </string-array>
+
 </resources>

@@ -1,10 +1,17 @@
 package com.pettime.pettimedevelop.Vista;
 
 import android.app.AlertDialog;
+import android.app.Fragment;
 import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
+import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -15,6 +22,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -25,8 +33,8 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.pettime.pettimedevelop.Datos.DataEst;
-import com.pettime.pettimedevelop.Fragmentos.FragmentoInicial;
-import com.pettime.pettimedevelop.Fragmentos.FragmentoVacio;
+import com.pettime.pettimedevelop.Fragmentos.FragmentoBienvenida;
+import com.pettime.pettimedevelop.Fragmentos.FragmentoMascotas;
 import com.pettime.pettimedevelop.Modelo.Establecimiento;
 import com.pettime.pettimedevelop.Modelo.Usuario;
 import com.pettime.pettimedevelop.R;
@@ -44,8 +52,9 @@ public class Navegador extends AppCompatActivity
     private ArrayList<Establecimiento> est = datosEst.getEstablecimientos();
     private ArrayList<MarkerOptions> marks = datosEst.getMarcadores();
     public Usuario usr;
-
-    SupportMapFragment sMapFragment;
+    private SupportMapFragment sMapFragment;
+    private FragmentoBienvenida fragmentoBienvenida;
+    private FragmentoMascotas fragmentoMascotas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,25 +78,16 @@ public class Navegador extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        Bundle arguments = new Bundle();
+        arguments.putSerializable("user",usr);
+        fragmentoBienvenida = FragmentoBienvenida.newInstance(arguments);
+        fragmentoMascotas = FragmentoMascotas.newInstance(arguments);
         FragmentManager fm = getFragmentManager();
+        fm.beginTransaction().replace(R.id.content_frame_nav, fragmentoBienvenida).commit();
 
-        //FragmentoInicial hf = new FragmentoInicial();
-        /*Bundle b = new Bundle();
-        b.putString("1",usr.getNombre());
-        b.putString("2",usr.getEmail());
-        hf.setArguments(b);*/
-
-        fm.beginTransaction().replace(R.id.content_frame_nav, new FragmentoVacio()).commit();
+        inflarEncabezadoNav(navigationView);
 
         sMapFragment.getMapAsync(this);
-
-        View header = LayoutInflater.from(this).inflate(R.layout.nav_header_navegador, null);
-        navigationView.addHeaderView(header);
-
-        TextView lblTituloNav= (TextView)header.findViewById(R.id.lblTituloNav);
-
-        lblTituloNav.setText("Bienvenid@ "+usr.getNombre());
-
     }
 
     @Override
@@ -148,6 +148,7 @@ public class Navegador extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         FragmentManager fm = getFragmentManager();
         android.support.v4.app.FragmentManager sFm = getSupportFragmentManager();
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
 
         int id = item.getItemId();
 
@@ -160,8 +161,21 @@ public class Navegador extends AppCompatActivity
             else
                 sFm.beginTransaction().show(sMapFragment).commit();
         } else if (id == R.id.nav_profile) {
-
+            if (!fragmentoBienvenida.isAdded()) {
+                ft.replace(R.id.content_frame_nav, fragmentoBienvenida);
+                ft.commit();
+            }else {
+                ft.show(fragmentoBienvenida);
+                ft.commit();
+            }
         } else if (id == R.id.nav_pets) {
+            if (!fragmentoMascotas.isAdded()) {
+                ft.replace(R.id.content_frame_nav, fragmentoMascotas);
+                ft.commit();
+            }else {
+                ft.show(fragmentoMascotas);
+                ft.commit();
+            }
 
         } else if (id == R.id.nav_share) {
 
@@ -207,6 +221,29 @@ public class Navegador extends AppCompatActivity
             }
         }
         return estbl;
+    }
+
+
+    private void inflarEncabezadoNav(NavigationView navigationView){
+        View header = LayoutInflater.from(this).inflate(R.layout.nav_header_navegador, null);
+        navigationView.addHeaderView(header);
+        if(usr.getImagenPerfil()==null) {
+            //extraemos el drawable en un bitmap
+            Drawable originalDrawable = getResources().getDrawable(R.drawable.def_avatar);
+            Bitmap originalBitmap = ((BitmapDrawable) originalDrawable).getBitmap();
+            //creamos el drawable redondeado
+            RoundedBitmapDrawable roundedDrawable =
+                    RoundedBitmapDrawableFactory.create(getResources(), originalBitmap);
+            //asignamos el CornerRadius
+            roundedDrawable.setCornerRadius(originalBitmap.getHeight());
+            ImageView imageView = (ImageView) header.findViewById(R.id.avatarPeq);
+            imageView.setImageDrawable(roundedDrawable);
+        }else{
+            //codigo si el usuario tiene avatar
+        }
+        TextView lblTituloNav= (TextView)header.findViewById(R.id.lblTituloNav);
+
+        lblTituloNav.setText("Bienvenid@ "+usr.getNombre());
     }
 
 }
